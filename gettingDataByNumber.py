@@ -1,11 +1,12 @@
 import requests
+import config
 
 
 def parseNumber(number):
     url = "https://baza-gai.com.ua/nomer/{}".format(number)
 
     try:
-        r = requests.get(url, headers={"Accept": "application/json"})
+        r = requests.get(url, headers={"Accept": "application/json", "x-api-key": config.API_TOKEN_CAR_CHECKER})
         data = r.json()
 
 
